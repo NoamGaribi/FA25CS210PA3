@@ -126,8 +126,17 @@ bool dfs(int r, int c,
          vector<vector<bool>>& visited,
          vector<vector<int>>& parent_r,
          vector<vector<int>>& parent_c,
-         int exit_r, int exit_c);
-    int visit(int r,int c);
+         int exit_r, int exit_c){
+    //set everything in the maze as not visited first
+    for (int r = 0; r < visited.size(); r++) { 
+        for (int c = 0; c < visited[r].size(); c++) {
+            visited[r][c] = false;
+    }
+    void dfsvisiter(int )
+}
+
+
+         }
 
 
 // ----------------------------------------------------------
