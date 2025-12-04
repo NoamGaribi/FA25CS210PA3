@@ -117,7 +117,11 @@ void printPath(pair<int,int> exitcell,
 // STUDENTS IMPLEMENT DFS HERE
 // Add arguments, return type, and logic
 // ----------------------------------------------------------
-// bool dfs(……) {
+//  //set everything in the maze as not visited first, might use this later in main
+   // for (int r = 0; r < visited.size(); r++) { 
+       // for (int c = 0; c < visited[r].size(); c++) {
+         //   visited[r][c] = false;
+   // }
 //     // Your code here
 // }
 
@@ -127,16 +131,40 @@ bool dfs(int r, int c,
          vector<vector<int>>& parent_r,
          vector<vector<int>>& parent_c,
          int exit_r, int exit_c){
-    //set everything in the maze as not visited first
-    for (int r = 0; r < visited.size(); r++) { 
-        for (int c = 0; c < visited[r].size(); c++) {
-            visited[r][c] = false;
+    // check if in bounds first
+    if (r < 0 || r >= maze.size() || c < 0 || c >= maze[0].size()){
+    return false;
     }
-    void dfsvisiter(int )
-}
+    // returns false if value is 1
+    if(maze[r][c]== 1){
+        return false;
+    }
+    // see if we already visited it or not
+    if(visited[r][c]){
+        return false;
+    }
+    
+    //set it to be true 
+    visited[r][c] = true;
 
+    //if we find an exit
+    if(r == exit_r && c == exit_c){
+        return true;
+    }
 
-         }
+  // ignore all this i was testing stuff
+    // else{
+       // visited [r][c] = true;
+       // cout<< "(" << r << "," << c << ")"<< endl;
+     //   }
+   // for(int i=0; i < maze[r].size(); i++){
+       // if(maze[r][i]== 0){
+      //  dfs(i, visited
+      //  }
+   // }
+
+    }
+    
 
 
 // ----------------------------------------------------------
