@@ -148,19 +148,13 @@ bool dfs(int r, int c,
 
     for (int k= 0; k<4; k++){
         int nr = r + dr[k];
-        int nc = c + dc[k]; 
-        
-        // if out of bounds go to the next loop iteration, it cooks the whole thing without this check 
-        // because it will run dfs with data that doesn't exist or run the next loop with a diff r and c
-        if (nr < 0 || nr >= maze.size() || nc < 0 || nc >= maze[0].size()){
-            continue; 
-    }
-        // for tracking
-        parent_r[nr][nc] = r;
-        parent_c[nr][nc]= c;
+        int nc = c + dc[k];
         
         // if neighbor found exit we return true
        if (dfs(nr,nc,maze,visited,parent_r, parent_c, exit_r,exit_c)) {
+         // for tracking
+        parent_r[nr][nc] = r;
+        parent_c[nr][nc]= c;
         return true;
        }
 }
